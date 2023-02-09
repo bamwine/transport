@@ -1,0 +1,22 @@
+SELECT complaints . * , clients.cl_stag, clients.cl_leve, stages.st_name
+FROM complaints
+INNER JOIN clients ON complaints.com_user = clients.cl_id
+INNER JOIN stages ON clients.cl_stag = stages.st_id
+WHERE clients.cl_stag = '2'
+AND clients.cl_leve = '7' or clients.cl_leve = '6'
+
+
+
+
+
+
+Select   complaints.*,  clients.cl_stag, clients.cl_leve, stages.st_name, user_levels.usr_leve
+From  complaints Inner Join   clients    On complaints.com_user = clients.cl_id Inner Join
+  stages  On clients.cl_stag = stages.st_id Inner Join  user_levels   On clients.cl_leve = user_levels.usr_id
+Where   clients.cl_stag = '2' AND clients.cl_leve = '7' or clients.cl_leve = '6'
+
+
+Select   complaints.*,  clients.cl_stag, clients.cl_leve, stages.st_name, user_levels.usr_leve
+From  complaints Inner Join   clients    On complaints.com_user = clients.cl_id Inner Join
+  stages  On clients.cl_stag = stages.st_id Inner Join  user_levels   On clients.cl_leve = user_levels.usr_id
+Where   clients.cl_stag = '2' AND usr_leve = 'STAGE GUIDE' or usr_leve = 'KOSA'
